@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon -w server.js server.js",
     "build": "next build",
-    "export": "npm run build && next export && && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to gh-pages\" && git subtree push --prefix out origin gh-pages",
+    "export": "npm run build && next export",
+    "deploy": "npm run export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to gh-pages\" && git subtree push --prefix out origin gh-pages",
     "start": "NODE_ENV=production node server.js"
   },
   "author": "ME!",
